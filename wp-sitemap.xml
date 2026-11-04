@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://dropix-2.local/sitemap-stylesheet.xsl"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>http://dropix-2.local/archives-sitemap-1.xml</loc>
+    <lastmod>2026-11-04T03:00:46+00:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>http://dropix-2.local/post-type-cartflows_step-sitemap-1.xml</loc>
+    <lastmod>2026-11-04T03:00:46+00:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>http://dropix-2.local/post-type-elementor_library-sitemap-1.xml</loc>
+    <lastmod>2026-11-04T03:00:46+00:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>http://dropix-2.local/post-type-page-sitemap-1.xml</loc>
+    <lastmod>2026-11-04T03:00:46+00:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>http://dropix-2.local/post-type-post-sitemap-1.xml</loc>
+    <lastmod>2026-11-04T03:00:46+00:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>http://dropix-2.local/post-type-product-sitemap-1.xml</loc>
+    <lastmod>2026-11-04T03:00:46+00:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>http://dropix-2.local/post-type-sureforms_form-sitemap-1.xml</loc>
+    <lastmod>2026-11-04T03:00:46+00:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>http://dropix-2.local/taxonomy-type-category-sitemap-1.xml</loc>
+    <lastmod>2026-11-04T03:00:46+00:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>http://dropix-2.local/taxonomy-type-product_cat-sitemap-1.xml</loc>
+    <lastmod>2026-11-04T03:00:46+00:00</lastmod>
+  </sitemap>
+</sitemapindex>

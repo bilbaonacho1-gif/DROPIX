@@ -1,0 +1,190 @@
+.elementor-kit-1390{--e-global-color-primary:#0060FF;--e-global-color-secondary:#4DA3FF;--e-global-color-text:#F4F4F4;--e-global-color-accent:#1A1A1A;--e-global-color-dpxnegro:#080808;--e-global-color-dpxtexto2:#A3A3AD;--e-global-typography-primary-font-family:"Unbounded";--e-global-typography-primary-font-weight:800;--e-global-typography-secondary-font-family:"Unbounded";--e-global-typography-secondary-font-weight:700;--e-global-typography-text-font-family:"Inter";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Inter";--e-global-typography-accent-font-weight:600;background-color:#080808;}.elementor-kit-1390 e-page-transition{background-color:#FFBC7D;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1200px;}.e-con{--container-max-width:1200px;}.elementor-widget:not(:last-child){margin-block-end:20px;}.elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px;}{}h1.entry-title{display:var(--page-title-display);}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}/* Start custom CSS *//* =========================================================
+   DROPIX — CSS adicional
+   Dónde está cargado: Elementor &gt; Ajustes del sitio &gt; CSS personalizado
+   Colores de la marca (PDF):
+     #080808 negro · #1A1A1A gris oscuro · #0060FF azul
+     #4DA3FF azul secundario · #F4F4F4 blanco
+   ========================================================= */
+
+/* 1. Fondo oscuro liso en todo el sitio (tapa la imagen de fondo de la plantilla Astra) */
+body {
+  background: #080808;
+  color: #F4F4F4;
+}
+
+/* 2. Header: fijo arriba del contenido (no transparente) y con fondo oscuro */
+.ast-theme-transparent-header #masthead {
+  position: relative;
+}
+#masthead .ast-primary-header-bar,
+#masthead .main-header-bar {
+  background: #080808;
+  border-bottom: 1px solid #1F1F1F;
+}
+
+/* Logo con sus colores originales (Astra le aplicaba un filtro blanco) */
+#masthead .custom-logo {
+  filter: none !important;
+  max-height: 64px;
+  width: auto;
+}
+
+/* Menú: blanco, y azul al pasar el mouse o en la página actual */
+#masthead .menu-link {
+  color: #F4F4F4;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+#masthead .menu-item:hover &gt; .menu-link,
+#masthead .current-menu-item &gt; .menu-link {
+  color: #4DA3FF;
+}
+#masthead .sub-menu {
+  background: #1A1A1A;
+  border-color: #0060FF;
+}
+
+/* 3. Tarjetas con borde discreto (clase dpx-card en contenedores de Elementor) */
+.dpx-card {
+  transition: border-color .2s ease;
+}
+.dpx-card:hover {
+  border-color: #0060FF !important;
+}
+
+/* 4. Detalle pixelado debajo de títulos con la clase dpx-pixel */
+.dpx-pixel .elementor-heading-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 6px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, #0060FF 0 66%, #4DA3FF 66% 100%);
+  box-shadow: 54px 0 0 #0060FF;
+}
+
+/* 5. WooCommerce — tarjetas de producto (tienda y Home) */
+.woocommerce ul.products li.product {
+  background: #111111;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 14px !important;
+  transition: border-color .2s ease;
+}
+.woocommerce ul.products li.product:hover {
+  border-color: #0060FF;
+}
+
+/* Imágenes cuadradas para que todas las tarjetas midan lo mismo */
+.woocommerce ul.products li.product img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Categoría, nombre y precio */
+.woocommerce ul.products li.product .ast-woo-product-category {
+  color: #A3A3AD;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  color: #F4F4F4;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.woocommerce ul.products li.product .price,
+.woocommerce div.product p.price {
+  color: #F4F4F4;
+  font-weight: 700;
+}
+
+/* 6. Botones de WooCommerce en azul de marca */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce .button.alt {
+  background: #0060FF !important;
+  color: #F4F4F4 !important;
+  border-radius: 8px;
+}
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce .button.alt:hover {
+  background: #4DA3FF !important;
+  color: #080808 !important;
+}
+.woocommerce span.onsale {
+  background: #0060FF;
+}
+
+/* 7. Footer: listas de enlaces sin viñetas */
+.dpx-footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dpx-footer-links li {
+  margin-bottom: 8px;
+}
+.dpx-footer-links a {
+  color: #A3A3AD;
+}
+.dpx-footer-links a:hover {
+  color: #4DA3FF;
+}
+
+/* 8. Títulos de las categorías (juegos) en la Home: enlaces blancos */
+.elementor-heading-title a {
+  color: inherit;
+}
+
+/* 9. Miniaturas de juegos en la Home (clase dpx-tile): todas del mismo tamaño */
+.dpx-tile img {
+  width: 100% !important;
+  height: 140px !important;
+  object-fit: cover;
+}
+
+/* 10. Enlaces dentro de textos del footer */
+.elementor-1165 .elementor-widget-text-editor a {
+  color: #4DA3FF;
+}
+
+/* 11. Tienda (páginas de WooCommerce con Astra): fondo oscuro en vez de la caja blanca */
+.ast-woocommerce-container,
+.ast-mobile-popup-inner {
+  background: #080808 !important;
+}
+
+/* Barra lateral de la tienda (filtro de precio y categorías) legible sobre fondo oscuro */
+#secondary .widget-title,
+#secondary h2,
+#secondary a,
+#secondary li,
+#secondary .price_label,
+.woocommerce-breadcrumb,
+.woocommerce-breadcrumb a,
+.woocommerce-result-count,
+.woocommerce-products-header__title,
+.woocommerce div.product .product_title,
+.woocommerce div.product .woocommerce-tabs,
+.woocommerce div.product .woocommerce-product-details__short-description {
+  color: #F4F4F4 !important;
+}
+#secondary a:hover {
+  color: #4DA3FF !important;
+}
+.woocommerce .orderby,
+#secondary input[type="search"] {
+  background: #1A1A1A;
+  color: #F4F4F4;
+  border: 1px solid #262626;
+}
+/* Barra del filtro de precio en azul de marca */
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+  background-color: #0060FF;
+}/* End custom CSS */
