@@ -151,7 +151,7 @@
 	});
 
 	/* ---------- Revelado al hacer scroll ---------- */
-	var revealEls = document.querySelectorAll('.dpx-reveal, .dpx-flip-grid .dpx-flip, .dpx-strip__item, ul.products .dpx-loop-item');
+	var revealEls = document.querySelectorAll('.dpx-reveal, .dpx-flip-grid .dpx-flip, .dpx-strip > .dpx-strip__item, ul.products .dpx-loop-item');
 	if (reduced || !('IntersectionObserver' in window)) {
 		revealEls.forEach(function (el) { el.classList.add('is-in'); });
 	} else {
@@ -197,9 +197,34 @@
 		setTimeout(function () { t.classList.remove('is-in'); setTimeout(function () { t.remove(); }, 400); }, 3200);
 	}
 	if (window.jQuery) {
-		window.jQuery(document.body).on('added_to_cart', function (e, fragments, hash, $btn) {
-			var card = $btn && $btn[0] ? $btn[0].closest('.dpx-flip') : null;
-			var name = card ? card.querySelector('.dpx-flip__title').textContent.trim() : 'Producto';
+		var $ = window.jQuery;
+
+		// Botón nativo de Elementor dentro del Loop Item: agrega por AJAX en vez de recargar.
+		document.addEventListener('click', function (e) {
+			var link = e.target.closest('.dpx-buy-btn a[href*="add-to-cart="]');
+			if (!link || !window.wc_add_to_cart_params) { return; }
+			e.preventDefault();
+			var id = new URL(link.href, location.href).searchParams.get('add-to-cart');
+			link.classList.add('is-loading');
+			var text = link.querySelector('.elementor-button-text');
+			var original = text ? text.textContent : '';
+			if (text) { text.textContent = 'Agregando…'; }
+			$.post(window.wc_add_to_cart_params.wc_ajax_url.replace('%%endpoint%%', 'add_to_cart'), { product_id: id, quantity: 1 })
+				.done(function (res) {
+					if (!res || res.error) { window.location = link.href; return; }
+					$(document.body).trigger('added_to_cart', [res.fragments, res.cart_hash, $(link)]);
+				})
+				.fail(function () { window.location = link.href; })
+				.always(function () {
+					link.classList.remove('is-loading');
+					if (text) { text.textContent = original; }
+				});
+		});
+
+		$(document.body).on('added_to_cart', function (e, fragments, hash, $btn) {
+			var card = $btn && $btn[0] ? $btn[0].closest('.dpx-flip, .e-loop-item') : null;
+			var title = card ? (card.querySelector('.dpx-flip__title') || card.querySelector('.elementor-heading-title')) : null;
+			var name = title ? title.textContent.trim() : 'Producto';
 			toast(name + ' agregado al carrito');
 			document.querySelectorAll('.elementor-menu-cart__toggle, .dpx-cart-link').forEach(function (c) {
 				c.classList.remove('dpx-bump'); void c.offsetWidth; c.classList.add('dpx-bump');

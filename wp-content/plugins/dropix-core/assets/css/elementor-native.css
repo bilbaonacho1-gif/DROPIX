@@ -1,0 +1,138 @@
+/* ==========================================================================
+   DROPIX — estilos para la versión con widgets nativos de Elementor / Pro Elements
+   (Loop Item, Loop Grid, Taxonomy Filter, Call to Action, Flip Box, Loop Carousel,
+   Motion Effects). Se carga después de dropix.css.
+   ========================================================================== */
+
+/* ---------- Ficha flip como Loop Item ---------- */
+.dpx-flip.e-con { --padding-top: 0px; --padding-bottom: 0px; --padding-left: 0px; --padding-right: 0px; display: block !important; height: 100%; }
+.dpx-flip.e-con > .dpx-flip__inner.e-con { display: block !important; height: 100%; min-height: inherit; }
+.dpx-flip__face.e-con { position: absolute !important; inset: 0; display: flex !important; }
+.dpx-flip:has(.dpx-rarity.is-milspec) { --rc: var(--dpx-r-milspec); }
+.dpx-flip:has(.dpx-rarity.is-restricted) { --rc: var(--dpx-r-restricted); }
+.dpx-flip:has(.dpx-rarity.is-classified) { --rc: var(--dpx-r-classified); }
+.dpx-flip:has(.dpx-rarity.is-covert) { --rc: var(--dpx-r-covert); }
+.dpx-flip:has(.dpx-rarity.is-contraband) { --rc: var(--dpx-r-contraband); }
+.dpx-flip__media.e-con { flex: 1 1 auto; min-height: 0; padding: 12px !important; position: relative; }
+.dpx-flip__media .dpx-flip__img { width: 100%; height: 100%; margin: 0 !important; }
+.dpx-flip__media .dpx-flip__img img { width: 100%; height: 100%; max-height: 270px; object-fit: cover; border-radius: 12px; transition: transform 0.7s var(--dpx-ease); }
+.dpx-flip:hover .dpx-flip__img img { transform: scale(1.04); }
+.dpx-flip__rarity { position: absolute !important; top: 14px; left: 14px; z-index: 3; width: auto !important; margin: 0 !important; }
+.dpx-flip__rarity .dpx-rarity { position: static; }
+.dpx-flip .elementor-widget { margin-bottom: 0 !important; }
+.dpx-flip__collection .elementor-heading-title { font: 600 11px/1.2 var(--dpx-body) !important; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dpx-blue-2) !important; margin: 0; }
+.dpx-flip__title .elementor-heading-title, .dpx-flip__title .elementor-heading-title a { font: 800 15px/1.25 var(--dpx-display) !important; text-transform: uppercase; color: #fff !important; margin: 0; }
+.dpx-flip__back .dpx-flip__title .elementor-heading-title { font-size: 17px !important; padding-right: 40px; }
+.dpx-price .elementor-heading-title, .dpx-price .elementor-heading-title .amount { font: 800 18px/1 var(--dpx-body) !important; color: #fff !important; margin: 0; }
+.dpx-price .elementor-heading-title del { opacity: 0.45; font-size: 13px; margin-right: 6px; }
+.dpx-price .elementor-heading-title ins { text-decoration: none; }
+.dpx-flip__desc, .dpx-flip__desc p { color: var(--dpx-muted) !important; font-size: 13.5px !important; line-height: 1.55 !important; margin: 0 !important; }
+.dpx-flip__desc .elementor-widget-container { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.dpx-flip__buy.e-con { margin-top: auto; }
+.dpx-buy-btn .elementor-button {
+	width: 100%; justify-content: center; padding: 14px 16px !important; border-radius: 12px !important;
+	background: var(--dpx-blue) !important; color: #fff !important; font: 700 12.5px/1 var(--dpx-body) !important; letter-spacing: 0.08em; text-transform: uppercase;
+	box-shadow: 0 10px 26px -10px rgba(0, 96, 255, 0.9); transition: transform 0.3s var(--dpx-ease), box-shadow 0.3s, background 0.3s;
+}
+.dpx-buy-btn .elementor-button:hover { background: #1a72ff !important; box-shadow: 0 16px 34px -10px rgba(0, 96, 255, 1); transform: translateY(-2px); }
+.dpx-buy-btn .elementor-button.is-loading { opacity: 0.6; pointer-events: none; }
+.dpx-buy-btn .elementor-button svg { fill: currentColor; width: 1em; }
+.dpx-flip .elementor-widget-html { width: auto; }
+.dpx-flip__back > .elementor-widget-html { position: absolute !important; top: 16px; right: 16px; }
+.dpx-flip__back .dpx-flip__toggle--back { position: static; }
+.dpx-loop .elementor-loop-container { align-items: stretch; }
+.dpx-loop .e-loop-item, .dpx-loop .e-loop-item > .dpx-flip { min-height: 440px; }
+.dpx-loop .elementor-pagination { margin-top: 30px; display: flex; gap: 8px; justify-content: center; }
+.dpx-loop .elementor-pagination .page-numbers { padding: 10px 14px; border-radius: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--dpx-line); color: var(--dpx-white); }
+.dpx-loop .elementor-pagination .page-numbers.current { background: var(--dpx-blue); border-color: var(--dpx-blue); }
+
+/* ---------- Filtro por taxonomía (chips) ---------- */
+.dpx-taxfilter .e-filter { gap: 10px; flex-wrap: wrap; }
+.dpx-taxfilter .e-filter-item {
+	font: 600 13px/1 var(--dpx-body) !important; letter-spacing: 0.04em; color: var(--dpx-muted) !important; cursor: pointer;
+	padding: 11px 18px !important; border-radius: 999px !important; border: 1px solid var(--dpx-line) !important; background: rgba(255, 255, 255, 0.02) !important;
+	transition: all 0.3s var(--dpx-ease);
+}
+.dpx-taxfilter .e-filter-item:hover { color: #fff !important; border-color: var(--dpx-line-blue) !important; }
+.dpx-taxfilter .e-filter-item[aria-pressed="true"] { background: var(--dpx-blue) !important; border-color: var(--dpx-blue) !important; color: #fff !important; box-shadow: 0 8px 22px -8px rgba(0, 96, 255, 0.9); }
+
+/* ---------- Categorías: Call to Action ---------- */
+.dpx-cta .elementor-cta { border-radius: var(--dpx-radius); border: 1px solid var(--dpx-line); overflow: hidden; transition: transform 0.5s var(--dpx-ease), border-color 0.4s, box-shadow 0.5s; }
+.dpx-cta:hover .elementor-cta { transform: translateY(-10px); border-color: var(--dpx-line-blue); box-shadow: var(--dpx-glow); }
+.dpx-cta .elementor-cta__bg-overlay { background: linear-gradient(180deg, rgba(8, 8, 8, 0.05) 30%, rgba(8, 8, 8, 0.92) 88%) !important; }
+.dpx-cta .elementor-cta:hover .elementor-cta__bg-overlay { background: linear-gradient(180deg, rgba(0, 40, 120, 0.15) 20%, rgba(8, 8, 8, 0.95) 90%) !important; }
+.dpx-cta .elementor-cta__content { padding: 26px !important; }
+.dpx-cta .elementor-cta__title { font: 800 clamp(18px, 1.6vw, 24px)/1.1 var(--dpx-display) !important; text-transform: uppercase; color: #fff !important; }
+.dpx-cta .elementor-cta__description { color: var(--dpx-muted) !important; font: 400 14px/1.5 var(--dpx-body) !important; }
+.dpx-cta .elementor-cta__button { background: transparent !important; border: 0 !important; padding: 0 !important; color: #fff !important; font: 700 12px/1 var(--dpx-body) !important; letter-spacing: 0.14em; text-transform: uppercase; }
+.dpx-cta .elementor-cta__button::after { content: " →"; }
+.dpx-cta .elementor-ribbon-inner { background: var(--dpx-blue) !important; font: 800 10px/1 var(--dpx-body) !important; letter-spacing: 0.14em; text-transform: uppercase; }
+.dpx-shop .dpx-cta .elementor-cta__description, .dpx-shop .dpx-cta .elementor-cta__button { display: none; }
+
+/* ---------- Beneficios: Flip Box ---------- */
+.dpx-flipbox .elementor-flip-box__layer { border-radius: var(--dpx-radius); border: 1px solid var(--dpx-line); }
+.dpx-flipbox .elementor-flip-box__front { background: linear-gradient(170deg, #121218, #0b0b0f) !important; }
+.dpx-flipbox .elementor-flip-box__back { background: linear-gradient(140deg, var(--dpx-blue), #0038a8) !important; border-color: transparent; box-shadow: 0 30px 60px -24px rgba(0, 96, 255, 0.9); }
+.dpx-flipbox .elementor-flip-box__layer__title { font: 800 15px/1.2 var(--dpx-display) !important; text-transform: uppercase; color: #fff !important; }
+.dpx-flipbox .elementor-flip-box__layer__description { font: 400 14px/1.55 var(--dpx-body) !important; color: var(--dpx-muted) !important; }
+.dpx-flipbox .elementor-flip-box__back .elementor-flip-box__layer__description { color: rgba(255, 255, 255, 0.9) !important; }
+.dpx-flipbox .elementor-icon { color: var(--dpx-blue-2) !important; border-color: var(--dpx-line-blue) !important; background: rgba(0, 96, 255, 0.12); border-radius: 16px !important; font-size: 26px; }
+.dpx-flipbox .elementor-icon svg { fill: var(--dpx-blue-2) !important; }
+
+/* ---------- Hero con widgets + Motion Effects ---------- */
+.dpx-scene.e-con { position: relative; aspect-ratio: 1 / 0.92; width: 100%; max-width: 720px; margin-inline: auto; display: block !important; }
+.dpx-scene .elementor-widget-image img { width: 100%; height: auto; }
+.dpx-scene__bg { position: absolute !important; inset: 0; z-index: 0; margin: 0 !important; }
+.dpx-scene__bg .elementor-widget-container { position: absolute; inset: 0; }
+.dpx-scene__bg .dpx-scene__radar, .dpx-scene__bg .dpx-scene__glow { position: absolute; }
+.dpx-scene__gun img { rotate: -8deg; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 30px rgba(0, 96, 255, 0.35)); }
+.dpx-scene__gun .elementor-widget-container { animation: dpx-float 7s ease-in-out infinite; }
+.dpx-float .elementor-widget-container { animation: dpx-float 6s ease-in-out infinite; }
+.dpx-float:nth-of-type(odd) .elementor-widget-container { animation-delay: -2.5s; animation-duration: 7.5s; }
+.dpx-scene__sticker { animation: none; }
+.dpx-scene__sticker img { filter: drop-shadow(0 16px 22px rgba(0, 0, 0, 0.6)); }
+.dpx-scene__hud-w { position: absolute !important; left: 4%; bottom: -2%; z-index: 5; width: auto !important; margin: 0 !important; }
+.dpx-scene__hud-w .dpx-scene__hud { position: static; display: flex; gap: 12px; }
+.dpx-stat-counter .elementor-counter-number-wrapper { justify-content: flex-start !important; font: 800 clamp(22px, 2.2vw, 30px)/1 var(--dpx-display) !important; color: #fff !important; }
+.dpx-stat-counter .elementor-counter-title { display: none; }
+
+/* ---------- Drop: Loop Carousel ---------- */
+.dpx-carousel .swiper-slide { height: auto; }
+.dpx-carousel .dpx-strip__item.e-con { height: 100%; border-radius: 14px; background: rgba(12, 12, 18, 0.75); border: 1px solid var(--dpx-line); backdrop-filter: blur(8px); text-decoration: none; transition: transform 0.45s var(--dpx-ease), border-color 0.3s, box-shadow 0.45s; }
+.dpx-carousel .dpx-strip__item.e-con:hover { transform: translateY(-8px) rotate(-1deg); border-color: var(--dpx-line-blue); box-shadow: var(--dpx-glow); }
+.dpx-carousel .dpx-strip__item img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
+.dpx-carousel .dpx-strip__name .elementor-heading-title { font: 700 12.5px/1.25 var(--dpx-body) !important; color: #fff !important; }
+.dpx-carousel .dpx-strip__price .elementor-heading-title, .dpx-carousel .dpx-strip__price .amount { font: 700 12.5px/1 var(--dpx-body) !important; color: var(--dpx-blue-2) !important; }
+.dpx-carousel .elementor-swiper-button { width: 42px; height: 42px; display: grid !important; place-items: center; border-radius: 12px; background: rgba(8, 8, 8, 0.7); border: 1px solid var(--dpx-line); color: #fff; }
+.dpx-carousel .elementor-swiper-button svg { fill: #fff; width: 16px; }
+.dpx-carousel .swiper-pagination-bullet { background: var(--dpx-muted); }
+.dpx-carousel .swiper-pagination-bullet-active { background: var(--dpx-blue); width: 22px; border-radius: 4px; }
+
+/* ---------- Tienda (plantilla Archivo de productos) ---------- */
+.dpx-side-widget { padding: 22px; border-radius: 18px; border: 1px solid var(--dpx-line); background: rgba(16, 16, 22, 0.75); width: 100%; }
+.dpx-side-widget h5, .dpx-side-widget .widgettitle, .dpx-side-widget h2 { font: 700 12px/1 var(--dpx-body) !important; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dpx-blue-2) !important; margin: 0 0 16px !important; }
+.dpx-side-widget .product-categories, .dpx-side-widget .product_list_widget { list-style: none; margin: 0; padding: 0; }
+.dpx-side-widget .product-categories li { padding: 7px 0; border-bottom: 1px dashed var(--dpx-line); color: var(--dpx-muted); }
+.dpx-side-widget .product-categories .children { list-style: none; padding-left: 14px; margin-top: 6px; }
+.dpx-side-widget a { color: var(--dpx-white) !important; }
+.dpx-side-widget a:hover, .dpx-side-widget .current-cat > a { color: var(--dpx-blue-2) !important; }
+.dpx-side-widget .product_list_widget li { display: flex; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--dpx-line); color: var(--dpx-blue-2); font-weight: 700; flex-wrap: wrap; }
+.dpx-side-widget .product_list_widget img { width: 46px !important; border-radius: 10px; float: none !important; margin: 0 !important; }
+.dpx-side-widget .star-rating { display: none; }
+
+@media (max-width: 767px) {
+	.dpx-taxfilter .e-filter { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+	.dpx-taxfilter .e-filter-item { flex: none; }
+	.dpx-loop .e-loop-item, .dpx-loop .e-loop-item > .dpx-flip { min-height: 390px; }
+	.dpx-flip__meta.e-con { padding: 12px !important; }
+	.dpx-flip__title .elementor-heading-title, .dpx-flip__title .elementor-heading-title a { font-size: 12px !important; }
+	.dpx-flip__back.e-con { padding: 14px 12px 12px !important; gap: 8px !important; }
+	.dpx-flip__back .dpx-flip__title .elementor-heading-title { font-size: 12px !important; padding-right: 30px; overflow-wrap: anywhere; }
+	.dpx-flip__back .dpx-flip__desc { display: none; }
+	.dpx-flip__back .dpx-specs li:nth-child(n+3) { display: none; }
+	.dpx-flip__back .dpx-specs li { flex-direction: column; gap: 2px; font-size: 11px; }
+	.dpx-buy-btn .elementor-button { font-size: 10.5px !important; letter-spacing: 0.02em; padding: 12px 6px !important; }
+	.dpx-buy-btn .elementor-button-icon { display: none; }
+	.dpx-price .elementor-heading-title, .dpx-price .elementor-heading-title .amount { font-size: 15px !important; }
+	.dpx-scene__hud-w { display: none; }
+}

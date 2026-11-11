@@ -23,6 +23,15 @@
 	var BLOCK = '.add_to_cart_button, .single_add_to_cart_button, .dpx-buy, .moderncart-trigger-open, .elementor-menu-cart__toggle_button, a[href*="add-to-cart="], a[href$="/carrito/"], a[href$="/finalizar-compra/"], a[href*="/step/"]';
 
 	document.addEventListener('click', function (e) {
+		// Filtro por taxonomía de Elementor: sin servidor, lleva a la página de la categoría.
+		var filter = e.target.closest('.e-filter-item');
+		if (filter) {
+			e.preventDefault();
+			e.stopImmediatePropagation();
+			var slug = filter.getAttribute('data-filter');
+			window.location.href = !slug || slug === '__all' ? '/tienda/' : '/product-category/' + slug + '/';
+			return;
+		}
 		var el = e.target.closest(BLOCK);
 		if (!el) { return; }
 		// Las variantes llevan a la ficha del producto, que sí existe en la vidriera.
