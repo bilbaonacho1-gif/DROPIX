@@ -1,6 +1,6 @@
 # DROPIX — vidriera estática
 
-Copia estática del sitio DROPIX (WordPress + Elementor + Pro Elements + WooCommerce), publicada en Vercel para poder verlo desde cualquier lugar.
+Copia estática del sitio DROPIX V5 (WordPress + Elementor + Pro Elements + WooCommerce + plugin propio `dropix-store`), publicada en Vercel para poder verlo desde cualquier lugar.
 
 - Se ven todas las páginas, el catálogo, las fichas flip 3D, las animaciones y el responsive.
 - Carrito, checkout, cuenta y formularios necesitan el servidor de WordPress: en esta copia muestran un aviso (`dpx-static.js`).
